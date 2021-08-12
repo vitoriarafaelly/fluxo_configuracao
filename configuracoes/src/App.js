@@ -1,12 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-import EditarConta from './components/EditarConta'
+
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
+
+import Routes from "./routes";
 
 function App() {
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#323751'
+      },
+      secondary: {
+        main: '#ffffff'
+      }
+    },
+  });
+
   return (
-    <div>
-      <EditarConta></EditarConta>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+
+
   );
 }
 
